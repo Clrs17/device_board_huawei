@@ -1,0 +1,164 @@
+# Copyright (c) 2024 Claris <2318678921@qq.com>
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni")
+
+ohos_prebuilt_etc("qcom.a530_pfp") {
+  source = "qcom/a530_pfp.fw"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/qcom"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("qcom.a530_pm4") {
+  source = "qcom/a530_pm4.fw"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/qcom"
+  install_enable = true
+}
+
+
+ohos_prebuilt_etc("qcom.a506_zap") {
+  source = "postmarketos/a506_zap.mdt"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/postmarketos"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("qcom.a506_zap_b00") {
+  source = "postmarketos/a506_zap.b00"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/postmarketos"
+  install_enable = true
+}
+
+
+ohos_prebuilt_etc("qcom.a506_zap_b01") {
+  source = "postmarketos/a506_zap.b01"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/postmarketos"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("qcom.a506_zap_b02") {
+  source = "postmarketos/a506_zap.b02"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/postmarketos"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("qcom.a506_zap_elf") {
+  source = "postmarketos/a506_zap.elf"
+  part_name = "qualcomm_products"
+  install_images = [ 
+    ramdisk_base_dir,
+    system_base_dir
+  ]
+  module_install_dir = "lib/firmware/postmarketos"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("regulatory.db") {
+  source = "regulatory.db"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("regulatory.db.p7s") {
+  source = "regulatory.db.p7s"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware"
+  install_enable = true
+}
+
+
+ohos_prebuilt_etc("qcom.adsp") {
+  source = "image/adsp.mbn"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware/image/huawei"
+  install_enable = true
+}
+
+
+ohos_prebuilt_etc("qcom.mba") {
+  source = "image/mba.mbn"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware/image"
+  install_enable = true
+}
+
+ohos_prebuilt_etc("qcom.modem") {
+  source = "image/modem.mbn"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware/image"
+  install_enable = true
+}
+
+
+ohos_prebuilt_etc("qcom.wcnss") {
+  source = "image/wcnss.mbn"
+  part_name = "qualcomm_products"
+  install_images = [ system_base_dir ]
+  module_install_dir = "lib/firmware/image"
+  install_enable = true
+}
+
+
+
+group("firmware") {
+  deps = [
+    ":qcom.a530_pfp",
+    ":qcom.a530_pm4",
+    ":qcom.a506_zap",
+    ":qcom.a506_zap_b00",
+    ":qcom.a506_zap_b01",
+    ":qcom.a506_zap_b02",
+    ":qcom.a506_zap_elf",
+    ":regulatory.db",
+    ":regulatory.db.p7s",
+    ":qcom.adsp",
+    ":qcom.mba",
+    ":qcom.modem",
+    ":qcom.wcnss",
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "subsystem": "qualcomm_products",
+    "parts": {
+        "qualcomm_products": {
+            "module_list": [
+                "//device/board/huawei/milan:milan_group"
+            ],
+            "test_list": [
+                "//device/board/huawei/milan/kernel:milan_build_bootimg"
+            ]
+        }
+    }
+}

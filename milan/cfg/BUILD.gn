@@ -1,0 +1,59 @@
+# Copyright (c) 2024 Claris <2318678921@qq.com>
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni")
+
+ohos_prebuilt_etc("init.milan.cfg") {
+  source = "init.milan.cfg"
+  part_name = "qualcomm_products"
+  install_images = [ chipset_base_dir ]
+  install_enable = true
+}
+
+ohos_prebuilt_etc("init.milan.usb.cfg") {
+  source = "init.milan.usb.cfg"
+  part_name = "qualcomm_products"
+  install_images = [ chipset_base_dir ]
+  install_enable = true
+}
+
+ohos_prebuilt_etc("fstab.milan") {
+  source = "fstab.milan"
+  part_name = "qualcomm_products"
+  install_images = [ vendor_base_dir ]
+  install_enable = true
+}
+
+ohos_prebuilt_executable("init.modprobe.sh") {
+  install_enable = true
+  source = "init.modprobe.sh"
+  module_install_dir = "etc/init"
+  install_images = [ chipset_base_dir ]
+  part_name = "qualcomm_products"
+}
+ohos_prebuilt_executable("msm-firmware-loader.sh") {
+  install_enable = true
+  source = "msm-firmware-loader.sh"
+  module_install_dir = "etc/init"
+  install_images = [ chipset_base_dir ]
+  part_name = "qualcomm_products"
+}
+group("init_configs") {
+  deps = [
+    ":fstab.milan",
+    ":init.milan.cfg",
+    ":init.milan.usb.cfg",
+    ":init.modprobe.sh",
+    ":msm-firmware-loader.sh",
+  ]
+}

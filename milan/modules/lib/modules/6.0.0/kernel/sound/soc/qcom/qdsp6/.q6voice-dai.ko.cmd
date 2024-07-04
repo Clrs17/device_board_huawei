@@ -1,0 +1,1 @@
+savedcmd_sound/soc/qcom/qdsp6/q6voice-dai.ko := /usr/bin/aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o sound/soc/qcom/qdsp6/q6voice-dai.ko sound/soc/qcom/qdsp6/q6voice-dai.o sound/soc/qcom/qdsp6/q6voice-dai.mod.o;  true

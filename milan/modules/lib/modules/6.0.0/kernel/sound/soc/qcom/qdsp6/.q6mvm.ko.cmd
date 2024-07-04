@@ -1,0 +1,1 @@
+savedcmd_sound/soc/qcom/qdsp6/q6mvm.ko := /usr/bin/aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o sound/soc/qcom/qdsp6/q6mvm.ko sound/soc/qcom/qdsp6/q6mvm.o sound/soc/qcom/qdsp6/q6mvm.mod.o;  true
